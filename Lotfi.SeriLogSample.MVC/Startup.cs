@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Lotfi.SeriLogSample.MVC.Infrastractures.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -52,7 +53,7 @@ namespace Lotfi.SeriLogSample.MVC
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseExceptionHandelingMiddleware();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Lotfi.SeriLogSample.MVC.Models;
 using Microsoft.Extensions.Logging;
+using Lotfi.SeriLogSample.MVC.Infrastractures.Middlewares;
 
 namespace Lotfi.SeriLogSample.MVC.Controllers
 {
@@ -19,8 +20,14 @@ namespace Lotfi.SeriLogSample.MVC.Controllers
         }
         public IActionResult Index()
         {
-            logger.LogInformation("Log info from index-Home");
-            logger.LogError("Log Error from index-Home");
+            throw new NullReferenceException("Nolllllllllllllll"); 
+            return View();
+        }
+
+        public IActionResult Index2()
+        {
+
+            throw new NotFoundCustomException("Message","Description",400); 
             return View();
         }
 
